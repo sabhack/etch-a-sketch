@@ -29,4 +29,17 @@ function resetGrid() {
     while (gridContainer.hasChildNodes()) {
         gridContainer.removeChild(gridContainer.firstChild);
     }
+    createGrid(num);
+    let gridBoxList = document.querySelectorAll('.grid-box');
+    gridBoxList.forEach(gridBox => {gridBox.addEventListener('mouseover', changeColor)});
 }
+
+function clearGrid() {
+    let gridBoxList = document.querySelectorAll('.grid-box');
+    gridBoxList.forEach(gridBox => {gridBox.style.backgroundColor = null});
+}
+
+let gridNumber = 16;
+createGrid(gridNumber);
+let gridBoxList = document.querySelectorAll('.grid-box');
+gridBoxList.forEach(gridBox => {gridBox.addEventListener('mouseover', changeColor)});
