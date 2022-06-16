@@ -14,3 +14,19 @@ function createGrid(number) {
 function changeColor(event) {
     event.target.style.backgroundColor = 'black';
 }
+
+function resetGrid() {
+    let num = prompt("Please enter grid size less than or equal to 100:");
+    if (num === undefined || num === null || num === '') {
+        return;
+    }   
+
+    while (num  > 100) {
+        num = prompt("Number too big! Please enter grid size less than or equal to 100:");
+    }
+
+    const gridContainer = document.querySelector('.grid-container');
+    while (gridContainer.hasChildNodes()) {
+        gridContainer.removeChild(gridContainer.firstChild);
+    }
+}
